@@ -1,0 +1,16 @@
+.board {
+    width: 500px;
+    height: 500px;
+    display: grid;
+    border: 2px solid black;
+    margin: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(225, 204, 204);
+
+}
