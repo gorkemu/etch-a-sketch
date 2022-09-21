@@ -1,16 +1,69 @@
-.board {
-    width: 500px;
-    height: 500px;
-    display: grid;
-    border: 2px solid black;
-    margin: 16px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --darker: #222831;
+    --dark: #393E46;
+    --light: #00ADB5;
+    --lighter: #EEEEEE;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(225, 204, 204);
-
+    background-color: var(--light);
+    color: var(--darker);
 }
+
+.title {
+    margin: 30px 0;
+    font-size: 24px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+label, input {
+    font-size: 20px;
+}
+
+.board {
+    width: 360px;
+    height: 360px;
+    display: grid;
+    border: 2px solid var(--darker);
+    margin: 16px 0;
+    background-color: var(--lighter);
+    box-shadow: 0px 5px 4px rgb(0 0 0 / 30%), 0px 8px 16px rgb(0 0 0 / 30%);
+}
+
+button {
+    width: 120px;
+    height: 60px;
+    background-color: var(--dark);
+    color: var(--lighter);
+    font-size: 20px;
+    border-radius: 7px;
+}
+
+@media only screen and (min-width: 768px) {
+    .board {
+        width: 480px;
+        height: 480px;
+    }
+ } 
