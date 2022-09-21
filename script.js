@@ -1,23 +1,27 @@
 const board = document.querySelector('.board');
+const reset = document.querySelector("#reset");
+const newSize = document.getElementById("newSize");
 
-createBoard = (size) => {
+newSize.addEventListener('change', (e) => {
+    changeSize(e.target.value);
+});
 
+reset.addEventListener('click', resetBoard);
+
+createBoard = size => {
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-
     for (let i = 0; i < size ** 2; i++) {
-
         let square = document.createElement('div');
         square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = "black";
+            square.style.backgroundColor = "#222831";
         });
-        square.style.backgroundColor = "#aa8cab";
-
+        square.style.backgroundColor = "#EEEEEE";
         board.appendChild(square);
     };
 };
 
-changeSize = (input) => {
+changeSize = input => {
     if (input >= 10 && input <= 100) {
         createBoard(input);
         resetBoard();
@@ -27,22 +31,11 @@ changeSize = (input) => {
     };
 };
 
-
-const newSize = document.getElementById("newSize");
-newSize.addEventListener('change', (e) => {
-    changeSize(e.target.value);
-})
-
-
-const reset = document.querySelector("#reset");
-reset.addEventListener('click', resetBoard);
-
 function resetBoard() {
-
     let val = document.getElementById('newSize').value;
     let square = board.children;
     for (let i = 0; i < val * val; i++) {
-        square[i].style.backgroundColor = "#aa8cab";
+        square[i].style.backgroundColor = "#EEEEEE";
     }
 };
 
